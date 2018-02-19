@@ -108,4 +108,12 @@ public class AgriaService {
         }
     	
     }
+    
+    public void deleteDog (AgriaSyncDog dog) {
+        try {
+        	agriaDogRepository.delete(dog);
+        }
+        finally{
+        }
+    }
 }

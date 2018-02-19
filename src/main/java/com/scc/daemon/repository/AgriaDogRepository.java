@@ -11,4 +11,5 @@ import com.scc.daemon.model.AgriaSyncDog;
 public interface AgriaDogRepository extends CrudRepository<AgriaSyncDog,String>  {
     public List<AgriaSyncDog> findByTransfert(String transfert);
     public AgriaSyncDog save(AgriaSyncDog dog);
+    public void delete(AgriaSyncDog dog);
 }

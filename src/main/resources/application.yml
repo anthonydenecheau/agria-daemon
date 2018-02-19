@@ -22,4 +22,4 @@ logging:
     com.netflix: WARN
     org.springframework.web: WARN
     com.scc: DEBUG      
-    
+    org.apache.kafka: WARN

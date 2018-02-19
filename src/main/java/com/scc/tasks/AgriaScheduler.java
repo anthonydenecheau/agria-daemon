@@ -58,11 +58,16 @@ public class AgriaScheduler {
 		    			
 		    	    	// 2. Lecture des infos pour le chien à synchroniser 
 		    			// Note : vue AGRIA_CHIEN (Oracle) == image de la table AGRIA_CHIEN (PostGRE)
-		    			// Cas particulier du DELETE, dog == null
+		    			// Si UPDATE/INSERT et dog == null alors le chien n'est pas dans le périmètre -> on le supprime de la liste
+		    			// + DELETE, dog == null -> on publie uniquement l'id à supprimer
 		    			AgriaDog dog = new AgriaDog();
-		    			if (!syncDog.getAction().equals("D"))
+		    			if (!syncDog.getAction().equals("D")) {
 		    				dog = agriaService.getDogById(idDog);
-		    			else
+		    				if (dog == null ) {
+		    					agriaService.deleteDog(syncDog);
+		    					continue;		    	
+		    				}
+		    			} else
 		    				dog.withId(idDog);	
 		    			
 		    	    	// 3. Envoi du message à agria-service pour maj Postgre
