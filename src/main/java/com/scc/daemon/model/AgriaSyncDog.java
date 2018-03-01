@@ -8,11 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ragria_sync_chien")
+@Table(name = "agria_sync_data")
 public class AgriaSyncDog {
 
 	@Id
-	@Column(name = "ident_rchien", nullable = false)
+	@Column(name = "id", nullable = false)
 	private int id;
 
 	@Column(name = "action")
