@@ -1,21 +1,27 @@
 package com.scc.daemon.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "agria_sync_data")
-public class AgriaSyncDog {
+@IdClass(AgriaSyncDataId.class)
+public class AgriaSyncDog implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@Column(name = "id", nullable = false)
 	private int id;
 
-	@Column(name = "action")
+	@Id
+	@Column(name = "action", nullable = false)
 	private String action;
 
 	@Column(name = "on_transfert")

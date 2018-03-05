@@ -51,7 +51,7 @@ public class AgriaScheduler {
 
 		            try {
 		    				
-		    	    	// 1. Maj du chien de la table (RAGRIA_SYNC_CHIEN)
+		    	    	// 1. Maj du chien de la table (AGRIA_SYNC_DATA)
 		    			idDog = syncDog.getId();
 		    			syncDog.setTransfert("O");
 		    			agriaService.saveDog(syncDog);

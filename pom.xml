@@ -81,11 +81,11 @@
   </dependencies>
   
   <repositories>
-  <repository>
-   	<id>project-common</id>
-    <name>Project Common</name>
-    <url>https://github.com/anthonydenecheau/mvn-repo/raw/master/</url>
-  </repository>
+	  <repository>
+	   	<id>project-common</id>
+	    <name>Project Common</name>
+	    <url>https://github.com/anthonydenecheau/mvn-repo/raw/master/</url>
+	  </repository>
   </repositories>
   
   <properties>
